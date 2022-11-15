@@ -2,7 +2,8 @@ package com.example.wwy_blog.controller;
 
 import com.example.wwy_blog.common.Result;
 import com.example.wwy_blog.entity.User;
-import com.example.wwy_blog.mapper.UserMapper;
+import com.example.wwy_blog.service.impl.UserServiceImpl;
+import com.example.wwy_blog.utils.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,22 +15,18 @@ import javax.servlet.http.HttpSession;
 public class UserController {
 
     @Autowired
-    UserMapper userMapper;
-
-    Result r = new Result();
+    UserServiceImpl userService;
 
     @PostMapping ("/login")
-    public Result login(HttpSession session, @RequestBody User user){
-        String password = user.getPassword();
+    public Result login(@RequestBody User user){
         String account = user.getAccount();
-        if (userMapper.getUserByAccountAndPassword(account,password) != null)
-        {
-            session.setAttribute("user",user);
-            return r.success("登录成功");
+        String password = user.getPassword();
+        if (userService.getUser(account,password) == null) {
+            return Result.fail("用户名或密码错误");
+        }else {
+            String token = TokenUtil.sign(account);
+            return Result.success("登录成功",token);
         }
-        return r.fail("用户名或密码错误");
-
-
     }
 
 }

@@ -14,7 +14,7 @@ public interface BlogMapper {
     Blog getBlogById(@Param("id") Integer id);
 
     @ResultType(Blog.class)
-    @Select("SELECT * FROM blog")
+    @Select("SELECT * FROM blog order by id DESC")
     List<Blog> getAllBlogs();
 
     @ResultType(Blog.class)

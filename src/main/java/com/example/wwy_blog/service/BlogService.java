@@ -1,8 +1,7 @@
 package com.example.wwy_blog.service;
 
-import com.example.wwy_blog.common.Result;
 import com.example.wwy_blog.entity.Blog;
-import com.example.wwy_blog.entity.Category;
+
 
 import java.util.List;
 

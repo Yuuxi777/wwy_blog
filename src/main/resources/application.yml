@@ -8,6 +8,13 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 200MB
+
+file:
+  path: D:\photo
 
 server:
   port: 8081
