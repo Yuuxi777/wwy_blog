@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +22,6 @@ public class PhotoController {
 
     @Autowired
     PhotoServiceImpl photoService;
-
-    public static final String UPLOAD_PATH = "E:\\phototest";
 
     private String requiredSuffix[] = {"PNG","JPG","JPEG","BMP","GIF","SVG"};
 

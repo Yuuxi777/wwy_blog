@@ -58,7 +58,7 @@ public class BlogServiceImpl implements BlogService {
         return convertBlogs(result);
     }
 
-    private List<Blog> convertBlogs(List<Blog> result) {
+    public List<Blog> convertBlogs(List<Blog> result) {
         for(Blog blog:result){
             blog.timeSwitch();
 

@@ -30,24 +30,24 @@ public class BlogController {
 
     @GetMapping("/getRecentBlog")
     public Result getRecentBlog(@RequestParam(value = "num")Integer id){
-           return r.success("查询成功",blogService.getRecentBlog(id));
+        return r.success("查询成功",blogService.getRecentBlog(id));
     }
 
     @GetMapping("/getBlogById")
     public Result getBlogById(@RequestParam(value = "id")Integer id){
-            Blog result = blogService.getBlogById(id);
+        Blog result = blogService.getBlogById(id);
         if (result == null){
             return r.fail("博客不存在,请检查id");
         }
-            return r.success("查询成功,id为"+result.getId(),result);
+        return r.success("查询成功,id为"+result.getId(),result);
     }
 
     @PostMapping("/uploadBlog")
     public Result uploadBlog(@RequestBody Blog blog) {
-       int result =  blogService.UploadBlog(blog);
-       if(result == 1){
-           return r.success("上传成功");
-       }
+        int result =  blogService.UploadBlog(blog);
+        if(result == 1){
+            return r.success("上传成功");
+        }
         return r.fail("上传失败");
     }
 

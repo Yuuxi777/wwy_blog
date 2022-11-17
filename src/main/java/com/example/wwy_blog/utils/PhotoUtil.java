@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class PhotoUtil {
 
-    public static final String UPLOAD_PATH = "E:\\phototest";
+    public static final String UPLOAD_PATH = "/home/blog/photos/";
 
     public static final String[] requiredSuffix = {"PNG","JPG","JPEG","BMP","GIF","SVG"};
 
