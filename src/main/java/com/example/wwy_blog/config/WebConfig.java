@@ -5,14 +5,14 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import static com.example.wwy_blog.utils.PhotoUtil.UPLOAD_PATH;
+import static com.example.wwy_blog.utils.PhotoUtil.UPLOAD_PATH_LINUX;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/image/**").addResourceLocations("file:"+UPLOAD_PATH);
+        registry.addResourceHandler("/image/**").addResourceLocations("file:"+UPLOAD_PATH_LINUX);
     }
 
     @Override
