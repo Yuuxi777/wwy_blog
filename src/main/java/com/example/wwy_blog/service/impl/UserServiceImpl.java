@@ -12,6 +12,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
+    /**
+     * 根据账号密码获取user
+     *
+     * @param account :账号
+     * @param password :密码
+     * @return user类
+     */
     @Override
     public User getUser(String account, String password) {
         try {

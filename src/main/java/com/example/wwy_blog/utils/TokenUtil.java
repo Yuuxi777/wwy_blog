@@ -4,17 +4,21 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+@Component
 public class TokenUtil {
 
     private static final long EXPIRE_TIME = 24*60*60*1000;
     private static final String TOKEN_SECRET = "kawhea";
 
     /**
-     * 签名 生成
-     * @parm userName
+     * 签名生成
+     *
+     * @param  userName :用户名
+     * @return token :用户名对应的token
      * */
     public static String sign(String userName){
         String token = null;
@@ -32,6 +36,12 @@ public class TokenUtil {
         return token;
     }
 
+    /**
+     * 验证签名
+     *
+     * @param token :传入的签名
+     * @return true验证成功 false验证失败
+     */
     public static boolean verify(String token){
         try {
             JWTVerifier verifier = JWT.require(Algorithm.HMAC256(TOKEN_SECRET))

@@ -5,8 +5,17 @@ import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.safety.Whitelist;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Html2PlainText {
+
+    /**
+     * html格式转化成普通格式
+     *
+     * @param html :html格式文本
+     * @return 普通格式文本
+     */
     public static String convert(String html)
     {
         if (StringUtils.isEmpty(html))

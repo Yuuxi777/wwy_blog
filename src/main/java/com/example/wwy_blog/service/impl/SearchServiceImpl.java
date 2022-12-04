@@ -17,6 +17,12 @@ public class SearchServiceImpl implements SearchService {
     @Autowired
     BlogServiceImpl blogService;
 
+    /**
+     * 根据关键词获取博客列表
+     *
+     * @param keyword :搜索的关键词
+     * @return 博客list
+     */
     @Override
     public List<Blog> getSearchResult(String keyword) {
         List<Blog> result = searchMapper.getSearchResult(keyword);

@@ -3,21 +3,32 @@ package com.example.wwy_blog.service;
 import com.example.wwy_blog.entity.Blog;
 
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface BlogService {
 
-    public List<Blog> getRecentBlog(int num);
+    List<Blog> getRecentBlog(int num);
 
-    public Blog getBlogById(int id);
+    Blog getBlogById(int id);
 
-    public List<Blog> getBlogByCategory(String name);
+    List<Blog> getBlogByCategory(String name);
 
-    public Integer UploadBlog(Blog blog);
+    Integer UploadBlog(Blog blog);
 
-    public Integer DeleteBlogById(Integer id);
+    Integer DeleteBlogById(Integer id);
 
-    public List<Blog> getAllBlogs();
+    List<Blog> getAllBlogs();
 
-    public Integer getBlogCount();
+    Integer getBlogCount();
+
+    Long getLikesFromRedis(Integer id,HttpServletRequest request);
+
+    Long getLikes(Integer id,HttpServletRequest request);
+
+    void setLikes(Integer id, HttpServletRequest request);
+
+    boolean isLikeFromRedis(Integer id, String ip);
+
+    boolean isLikeFromSQL(Integer id,String ip);
 }
