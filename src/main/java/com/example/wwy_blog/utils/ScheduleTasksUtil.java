@@ -37,6 +37,7 @@ public class ScheduleTasksUtil {
                 for (Object ip: likesSet) {
                     if (!ip.toString().equals("") && likeMapper.getLikeByIdAndIp(i,ip.toString()) == null) {
                         likeMapper.insert(i, ip.toString());
+                        System.out.println("新增一条数据");
                     }
                 }
             }

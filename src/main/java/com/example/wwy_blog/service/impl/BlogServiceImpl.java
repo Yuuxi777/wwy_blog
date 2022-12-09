@@ -54,6 +54,32 @@ public class BlogServiceImpl implements BlogService {
     }
 
     /**
+     * 返回所有博客
+     *
+     * @return 所有博客的列表
+     */
+    @Override
+    public List<Blog> getAllBlogs() {
+        List<Blog> result = blogMapper.getAllBlogs();
+        return convertBlogs(result);
+    }
+
+    /**
+     * 返回按时间倒序排列的最近num篇博客
+     *
+     * @param  num :指定返回的博客数量
+     * @return 博客列表
+     */
+    @Override
+    public List<Blog> getRecentBlog(int num) {
+        List<Blog> result = blogMapper.getRecentBlogs(num);
+        for (Blog blog: result) {
+            blog.setLikes(getLikes(blog.getId()));
+        }
+        return convertBlogs(result);
+    }
+
+    /**
      * 上传博客
      *
      * @param blog: 博客类
@@ -84,17 +110,6 @@ public class BlogServiceImpl implements BlogService {
            result = blogMapper.deleteBlogById(id);
         }
         return result;
-    }
-
-    /**
-     * 返回所有博客
-     *
-     * @return 所有博客的列表
-     */
-    @Override
-    public List<Blog> getAllBlogs() {
-        List<Blog> result = blogMapper.getAllBlogs();
-        return convertBlogs(result);
     }
 
     /**
@@ -133,18 +148,6 @@ public class BlogServiceImpl implements BlogService {
     }
 
     /**
-     * 返回按时间倒序排列的最近num篇博客
-     *
-     * @param  num :指定返回的博客数量
-     * @return 博客列表
-     */
-    @Override
-    public List<Blog> getRecentBlog(int num) {
-        List<Blog> result = blogMapper.getRecentBlogs(num);
-        return convertBlogs(result);
-    }
-
-    /**
      * 获取博客数量
      *
      * @return 博客数
@@ -165,10 +168,7 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public void setLikes(Integer id, HttpServletRequest request) {
         String ip = IpUtil.getIpAddress(request);
-//        if (isLikeFromRedis(id, ip)) {
-//            return;
-//        }
-        Long likes = getLikesFromRedis(id, request);
+        Long likes = getLikesFromRedis(id);
         if (likes == null) {
             List<Likes> likeList = likeMapper.getLikeSetById(id);
             for (Likes like:likeList) {
@@ -223,10 +223,10 @@ public class BlogServiceImpl implements BlogService {
      * @return likes:从redis或mysql中取出的点赞数
      */
     @Override
-    public Long getLikes(Integer id, HttpServletRequest request) {
+    public Long getLikes(Integer id) {
 
         // 判断redis中是否维护点赞数,有则直接返回
-        Long likes = getLikesFromRedis(id, request);
+        Long likes = getLikesFromRedis(id);
         if (likes != null) return likes;
 
         // 没有维护则从mysql中取出并写回redis
@@ -252,7 +252,7 @@ public class BlogServiceImpl implements BlogService {
      * @return likes :redis中维护的点赞数
      */
     @Override
-    public Long getLikesFromRedis(Integer id, HttpServletRequest request) {
+    public Long getLikesFromRedis(Integer id) {
         long likes = 0;
         try {
             Set<Object> likeSet = redisUtil.sGet(LIKE_KEY(id));

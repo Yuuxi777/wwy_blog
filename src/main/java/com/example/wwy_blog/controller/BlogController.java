@@ -29,17 +29,17 @@ public class BlogController {
     }
 
     @GetMapping("/getRecentBlog")
-    public Result getRecentBlog(@RequestParam(value = "num")Integer id){
-        return Result.success("查询成功",blogService.getRecentBlog(id));
+    public Result getRecentBlog(@RequestParam(value = "num")Integer num){
+        return Result.success("查询成功",blogService.getRecentBlog(num));
     }
 
     @GetMapping("/getBlogById")
     public Result getBlogById(@RequestParam(value = "id")Integer id){
-        Blog result = blogService.getBlogById(id);
-        if (result == null){
+        Blog blog = blogService.getBlogById(id);
+        if (blog == null){
             return Result.fail("博客不存在,请检查id");
         }
-        return Result.success("查询成功,id为"+result.getId(),result);
+        return Result.success("查询成功,id为"+blog.getId(),blog);
     }
 
     @PostMapping("/uploadBlog")
@@ -82,9 +82,8 @@ public class BlogController {
     }
 
     @GetMapping("/getLikesById")
-    public Result getLikesById(@RequestParam(value = "id")Integer id,
-                               HttpServletRequest request) {
-        return Result.success("查询成功",blogService.getLikes(id,request));
+    public Result getLikesById(@RequestParam(value = "id")Integer id) {
+        return Result.success("查询成功",blogService.getLikes(id));
     }
 
     @PostMapping("/setLikesById")
@@ -103,9 +102,9 @@ public class BlogController {
                              HttpServletRequest request) {
         String ip = IpUtil.getIpAddress(request);
         if (blogService.isLikeFromRedis(id, ip)) {
-            return Result.success("查询成功",false);
+            return Result.success("查询成功",true);
         }
-        return Result.success("查询成功",true);
+        return Result.success("查询成功",false);
     }
 
 }

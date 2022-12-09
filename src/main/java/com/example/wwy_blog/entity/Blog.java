@@ -30,6 +30,8 @@ public class Blog {
     @Column(name = "create_time")
     private String createTime;
 
+    private Long likes;
+
     public void timeSwitch() {
         this.setCreateTime(this.getCreateTime().substring(0,10));
     }

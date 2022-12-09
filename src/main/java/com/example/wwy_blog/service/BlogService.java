@@ -22,9 +22,9 @@ public interface BlogService {
 
     Integer getBlogCount();
 
-    Long getLikesFromRedis(Integer id,HttpServletRequest request);
+    Long getLikesFromRedis(Integer id);
 
-    Long getLikes(Integer id,HttpServletRequest request);
+    Long getLikes(Integer id);
 
     void setLikes(Integer id, HttpServletRequest request);
 
