@@ -102,9 +102,9 @@ public class BlogController {
                              HttpServletRequest request) {
         String ip = IpUtil.getIpAddress(request);
         if (blogService.isLikeFromRedis(id, ip)) {
-            return Result.success("查询成功",true);
+            return Result.success("查询成功",1);
         }
-        return Result.success("查询成功",false);
+        return Result.success("查询成功",0);
     }
 
 }

@@ -8,7 +8,6 @@ import java.util.List;
 @Mapper
 public interface BlogMapper {
 
-
     @ResultType(Blog.class)
     @Select("SELECT * FROM blog WHERE 1=1 AND id = #{id}")
     Blog getBlogById(@Param("id") Integer id);

@@ -17,6 +17,7 @@ env:
 server:
   port: 8081
 
+
 spring:
   redis:
     database: 0
@@ -40,3 +41,11 @@ spring:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+
+grpc:
+  client:
+    grpc-server:
+      address: 'static://127.0.0.1:9090'
+      negotiationType: plaintext
+      enableKeepAlive: true
+      keepAliveWithoutCalls: true

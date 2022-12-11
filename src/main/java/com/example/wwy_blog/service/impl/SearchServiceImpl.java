@@ -28,4 +28,6 @@ public class SearchServiceImpl implements SearchService {
         List<Blog> result = searchMapper.getSearchResult(keyword);
         return blogService.convertBlogs(result);
     }
+
+
 }
