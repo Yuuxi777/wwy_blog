@@ -6,8 +6,7 @@ env:
     host_local: localhost:3306
     host_server: 124.222.212.180:3306
     username: root
-    password_local: 123456
-    password_server: Woshiruozhi2002!
+    password: 123456
   redis:
     host_local: 127.0.0.1
     host_server: 124.222.212.180
@@ -28,7 +27,7 @@ spring:
     url: jdbc:mysql://${env.mysql.host_server}/blog?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${env.mysql.username}
-    password: ${env.mysql.password_server}
+    password: ${env.mysql.password}
   jpa:
     hibernate:
       ddl-auto: update
@@ -45,7 +44,7 @@ mybatis:
 grpc:
   client:
     grpc-server:
-      address: 'static://127.0.0.1:9090'
+      address: static://124.222.212.180:9090
       negotiationType: plaintext
       enableKeepAlive: true
       keepAliveWithoutCalls: true
