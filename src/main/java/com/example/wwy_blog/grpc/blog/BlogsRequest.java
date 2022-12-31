@@ -4,19 +4,18 @@
 package com.example.wwy_blog.grpc.blog;
 
 /**
- * Protobuf type {@code HelloResponse}
+ * Protobuf type {@code proto.BlogsRequest}
  */
-public  final class HelloResponse extends
+public  final class BlogsRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:HelloResponse)
-    HelloResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:proto.BlogsRequest)
+    BlogsRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use HelloResponse.newBuilder() to construct.
-  private HelloResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use BlogsRequest.newBuilder() to construct.
+  private BlogsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private HelloResponse() {
-    result_ = "";
+  private BlogsRequest() {
   }
 
   @java.lang.Override
@@ -24,7 +23,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private HelloResponse(
+  private BlogsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -32,7 +31,6 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
-    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -50,12 +48,6 @@ private static final long serialVersionUID = 0L;
             }
             break;
           }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            result_ = s;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -70,48 +62,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_HelloResponse_descriptor;
+    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogsRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_HelloResponse_fieldAccessorTable
+    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.example.wwy_blog.grpc.blog.HelloResponse.class, com.example.wwy_blog.grpc.blog.HelloResponse.Builder.class);
-  }
-
-  public static final int RESULT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object result_;
-  /**
-   * <code>string result = 1;</code>
-   */
-  public java.lang.String getResult() {
-    java.lang.Object ref = result_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      result_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string result = 1;</code>
-   */
-  public com.google.protobuf.ByteString
-      getResultBytes() {
-    java.lang.Object ref = result_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      result_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+            com.example.wwy_blog.grpc.blog.BlogsRequest.class, com.example.wwy_blog.grpc.blog.BlogsRequest.Builder.class);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -126,9 +84,6 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (!getResultBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, result_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -137,9 +92,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (!getResultBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, result_);
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -150,14 +102,12 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.example.wwy_blog.grpc.blog.HelloResponse)) {
+    if (!(obj instanceof com.example.wwy_blog.grpc.blog.BlogsRequest)) {
       return super.equals(obj);
     }
-    com.example.wwy_blog.grpc.blog.HelloResponse other = (com.example.wwy_blog.grpc.blog.HelloResponse) obj;
+    com.example.wwy_blog.grpc.blog.BlogsRequest other = (com.example.wwy_blog.grpc.blog.BlogsRequest) obj;
 
     boolean result = true;
-    result = result && getResult()
-        .equals(other.getResult());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -169,76 +119,74 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + RESULT_FIELD_NUMBER;
-    hash = (53 * hash) + getResult().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(byte[] data)
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(java.io.InputStream input)
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseDelimitedFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.example.wwy_blog.grpc.blog.HelloResponse parseFrom(
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -250,7 +198,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.example.wwy_blog.grpc.blog.HelloResponse prototype) {
+  public static Builder newBuilder(com.example.wwy_blog.grpc.blog.BlogsRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -265,25 +213,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code HelloResponse}
+   * Protobuf type {@code proto.BlogsRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:HelloResponse)
-      com.example.wwy_blog.grpc.blog.HelloResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:proto.BlogsRequest)
+      com.example.wwy_blog.grpc.blog.BlogsRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_HelloResponse_descriptor;
+      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogsRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_HelloResponse_fieldAccessorTable
+      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.example.wwy_blog.grpc.blog.HelloResponse.class, com.example.wwy_blog.grpc.blog.HelloResponse.Builder.class);
+              com.example.wwy_blog.grpc.blog.BlogsRequest.class, com.example.wwy_blog.grpc.blog.BlogsRequest.Builder.class);
     }
 
-    // Construct using com.example.wwy_blog.grpc.blog.HelloResponse.newBuilder()
+    // Construct using com.example.wwy_blog.grpc.blog.BlogsRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -300,31 +248,28 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      result_ = "";
-
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_HelloResponse_descriptor;
+      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogsRequest_descriptor;
     }
 
-    public com.example.wwy_blog.grpc.blog.HelloResponse getDefaultInstanceForType() {
-      return com.example.wwy_blog.grpc.blog.HelloResponse.getDefaultInstance();
+    public com.example.wwy_blog.grpc.blog.BlogsRequest getDefaultInstanceForType() {
+      return com.example.wwy_blog.grpc.blog.BlogsRequest.getDefaultInstance();
     }
 
-    public com.example.wwy_blog.grpc.blog.HelloResponse build() {
-      com.example.wwy_blog.grpc.blog.HelloResponse result = buildPartial();
+    public com.example.wwy_blog.grpc.blog.BlogsRequest build() {
+      com.example.wwy_blog.grpc.blog.BlogsRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.example.wwy_blog.grpc.blog.HelloResponse buildPartial() {
-      com.example.wwy_blog.grpc.blog.HelloResponse result = new com.example.wwy_blog.grpc.blog.HelloResponse(this);
-      result.result_ = result_;
+    public com.example.wwy_blog.grpc.blog.BlogsRequest buildPartial() {
+      com.example.wwy_blog.grpc.blog.BlogsRequest result = new com.example.wwy_blog.grpc.blog.BlogsRequest(this);
       onBuilt();
       return result;
     }
@@ -356,20 +301,16 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.example.wwy_blog.grpc.blog.HelloResponse) {
-        return mergeFrom((com.example.wwy_blog.grpc.blog.HelloResponse)other);
+      if (other instanceof com.example.wwy_blog.grpc.blog.BlogsRequest) {
+        return mergeFrom((com.example.wwy_blog.grpc.blog.BlogsRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.example.wwy_blog.grpc.blog.HelloResponse other) {
-      if (other == com.example.wwy_blog.grpc.blog.HelloResponse.getDefaultInstance()) return this;
-      if (!other.getResult().isEmpty()) {
-        result_ = other.result_;
-        onChanged();
-      }
+    public Builder mergeFrom(com.example.wwy_blog.grpc.blog.BlogsRequest other) {
+      if (other == com.example.wwy_blog.grpc.blog.BlogsRequest.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -383,86 +324,17 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.example.wwy_blog.grpc.blog.HelloResponse parsedMessage = null;
+      com.example.wwy_blog.grpc.blog.BlogsRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.example.wwy_blog.grpc.blog.HelloResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.example.wwy_blog.grpc.blog.BlogsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
           mergeFrom(parsedMessage);
         }
       }
-      return this;
-    }
-
-    private java.lang.Object result_ = "";
-    /**
-     * <code>string result = 1;</code>
-     */
-    public java.lang.String getResult() {
-      java.lang.Object ref = result_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        result_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string result = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getResultBytes() {
-      java.lang.Object ref = result_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        result_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string result = 1;</code>
-     */
-    public Builder setResult(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      result_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string result = 1;</code>
-     */
-    public Builder clearResult() {
-      
-      result_ = getDefaultInstance().getResult();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string result = 1;</code>
-     */
-    public Builder setResultBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      result_ = value;
-      onChanged();
       return this;
     }
     public final Builder setUnknownFields(
@@ -476,39 +348,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:HelloResponse)
+    // @@protoc_insertion_point(builder_scope:proto.BlogsRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:HelloResponse)
-  private static final com.example.wwy_blog.grpc.blog.HelloResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:proto.BlogsRequest)
+  private static final com.example.wwy_blog.grpc.blog.BlogsRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.example.wwy_blog.grpc.blog.HelloResponse();
+    DEFAULT_INSTANCE = new com.example.wwy_blog.grpc.blog.BlogsRequest();
   }
 
-  public static com.example.wwy_blog.grpc.blog.HelloResponse getDefaultInstance() {
+  public static com.example.wwy_blog.grpc.blog.BlogsRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<HelloResponse>
-      PARSER = new com.google.protobuf.AbstractParser<HelloResponse>() {
-    public HelloResponse parsePartialFrom(
+  private static final com.google.protobuf.Parser<BlogsRequest>
+      PARSER = new com.google.protobuf.AbstractParser<BlogsRequest>() {
+    public BlogsRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new HelloResponse(input, extensionRegistry);
+      return new BlogsRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<HelloResponse> parser() {
+  public static com.google.protobuf.Parser<BlogsRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<HelloResponse> getParserForType() {
+  public com.google.protobuf.Parser<BlogsRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.example.wwy_blog.grpc.blog.HelloResponse getDefaultInstanceForType() {
+  public com.example.wwy_blog.grpc.blog.BlogsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

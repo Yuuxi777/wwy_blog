@@ -4,7 +4,7 @@
 package com.example.wwy_blog.grpc.blog;
 
 public interface BlogResponseOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:BlogResponse)
+    // @@protoc_insertion_point(interface_extends:proto.BlogResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**

@@ -15,25 +15,25 @@ public final class BlogProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloRequest_descriptor;
+    internal_static_proto_BlogRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloRequest_fieldAccessorTable;
+      internal_static_proto_BlogRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_HelloResponse_descriptor;
+    internal_static_proto_BlogResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_HelloResponse_fieldAccessorTable;
+      internal_static_proto_BlogResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BlogRequest_descriptor;
+    internal_static_proto_BlogsRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BlogRequest_fieldAccessorTable;
+      internal_static_proto_BlogsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_BlogResponse_descriptor;
+    internal_static_proto_BlogsResponse_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_BlogResponse_fieldAccessorTable;
+      internal_static_proto_BlogsResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -43,16 +43,17 @@ public final class BlogProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BlogService.proto\"\034\n\014HelloRequest\022\014\n\004n" +
-      "ame\030\001 \001(\t\"\037\n\rHelloResponse\022\016\n\006result\030\001 \001" +
-      "(\t\"\031\n\013BlogRequest\022\n\n\002id\030\001 \001(\005\"`\n\014BlogRes" +
-      "ponse\022\n\n\002id\030\001 \001(\005\022\r\n\005title\030\002 \001(\t\022\020\n\010cate" +
-      "gory\030\003 \001(\t\022\017\n\007context\030\004 \001(\t\022\022\n\ncreateTim" +
-      "e\030\005 \001(\t24\n\005Hello\022+\n\010SayHello\022\r.HelloRequ" +
-      "est\032\016.HelloResponse\"\0002;\n\013BlogService\022,\n\013" +
-      "GetBlogById\022\014.BlogRequest\032\r.BlogResponse" +
-      "\"\000B-\n\036com.example.wwy_blog.grpc.blogB\tBl" +
-      "ogProtoP\001b\006proto3"
+      "\n\021BlogService.proto\022\005proto\"\031\n\013BlogReques" +
+      "t\022\n\n\002id\030\001 \001(\005\"`\n\014BlogResponse\022\n\n\002id\030\001 \001(" +
+      "\005\022\r\n\005title\030\002 \001(\t\022\020\n\010category\030\003 \001(\t\022\017\n\007co" +
+      "ntext\030\004 \001(\t\022\022\n\ncreateTime\030\005 \001(\t\"\016\n\014Blogs" +
+      "Request\"3\n\rBlogsResponse\022\"\n\005blogs\030\001 \003(\0132" +
+      "\023.proto.BlogResponse2\203\001\n\013BlogService\0228\n\013" +
+      "GetBlogById\022\022.proto.BlogRequest\032\023.proto." +
+      "BlogResponse\"\000\022:\n\013GetAllBlogs\022\023.proto.Bl" +
+      "ogsRequest\032\024.proto.BlogsResponse\"\000B7\n\036co" +
+      "m.example.wwy_blog.grpc.blogB\tBlogProtoP" +
+      "\001Z\010./;protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -66,30 +67,30 @@ public final class BlogProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_HelloRequest_descriptor =
+    internal_static_proto_BlogRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_HelloRequest_fieldAccessorTable = new
+    internal_static_proto_BlogRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloRequest_descriptor,
-        new java.lang.String[] { "Name", });
-    internal_static_HelloResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_HelloResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_HelloResponse_descriptor,
-        new java.lang.String[] { "Result", });
-    internal_static_BlogRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_BlogRequest_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BlogRequest_descriptor,
+        internal_static_proto_BlogRequest_descriptor,
         new java.lang.String[] { "Id", });
-    internal_static_BlogResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_BlogResponse_fieldAccessorTable = new
+    internal_static_proto_BlogResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_proto_BlogResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_BlogResponse_descriptor,
+        internal_static_proto_BlogResponse_descriptor,
         new java.lang.String[] { "Id", "Title", "Category", "Context", "CreateTime", });
+    internal_static_proto_BlogsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_proto_BlogsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BlogsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_proto_BlogsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_proto_BlogsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_proto_BlogsResponse_descriptor,
+        new java.lang.String[] { "Blogs", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

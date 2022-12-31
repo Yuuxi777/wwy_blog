@@ -24,7 +24,7 @@ public final class BlogServiceGrpc {
 
   private BlogServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "BlogService";
+  public static final String SERVICE_NAME = "proto.BlogService";
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
@@ -51,7 +51,7 @@ public final class BlogServiceGrpc {
               io.grpc.MethodDescriptor.<com.example.wwy_blog.grpc.blog.BlogRequest, com.example.wwy_blog.grpc.blog.BlogResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(
-                  "BlogService", "GetBlogById"))
+                  "proto.BlogService", "GetBlogById"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.example.wwy_blog.grpc.blog.BlogRequest.getDefaultInstance()))
@@ -63,6 +63,43 @@ public final class BlogServiceGrpc {
         }
      }
      return getGetBlogByIdMethod;
+  }
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getGetAllBlogsMethod()} instead. 
+  public static final io.grpc.MethodDescriptor<com.example.wwy_blog.grpc.blog.BlogsRequest,
+      com.example.wwy_blog.grpc.blog.BlogsResponse> METHOD_GET_ALL_BLOGS = getGetAllBlogsMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<com.example.wwy_blog.grpc.blog.BlogsRequest,
+      com.example.wwy_blog.grpc.blog.BlogsResponse> getGetAllBlogsMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<com.example.wwy_blog.grpc.blog.BlogsRequest,
+      com.example.wwy_blog.grpc.blog.BlogsResponse> getGetAllBlogsMethod() {
+    return getGetAllBlogsMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<com.example.wwy_blog.grpc.blog.BlogsRequest,
+      com.example.wwy_blog.grpc.blog.BlogsResponse> getGetAllBlogsMethodHelper() {
+    io.grpc.MethodDescriptor<com.example.wwy_blog.grpc.blog.BlogsRequest, com.example.wwy_blog.grpc.blog.BlogsResponse> getGetAllBlogsMethod;
+    if ((getGetAllBlogsMethod = BlogServiceGrpc.getGetAllBlogsMethod) == null) {
+      synchronized (BlogServiceGrpc.class) {
+        if ((getGetAllBlogsMethod = BlogServiceGrpc.getGetAllBlogsMethod) == null) {
+          BlogServiceGrpc.getGetAllBlogsMethod = getGetAllBlogsMethod = 
+              io.grpc.MethodDescriptor.<com.example.wwy_blog.grpc.blog.BlogsRequest, com.example.wwy_blog.grpc.blog.BlogsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "proto.BlogService", "GetAllBlogs"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.wwy_blog.grpc.blog.BlogsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.example.wwy_blog.grpc.blog.BlogsResponse.getDefaultInstance()))
+                  .setSchemaDescriptor(new BlogServiceMethodDescriptorSupplier("GetAllBlogs"))
+                  .build();
+          }
+        }
+     }
+     return getGetAllBlogsMethod;
   }
 
   /**
@@ -99,6 +136,13 @@ public final class BlogServiceGrpc {
       asyncUnimplementedUnaryCall(getGetBlogByIdMethodHelper(), responseObserver);
     }
 
+    /**
+     */
+    public void getAllBlogs(com.example.wwy_blog.grpc.blog.BlogsRequest request,
+        io.grpc.stub.StreamObserver<com.example.wwy_blog.grpc.blog.BlogsResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAllBlogsMethodHelper(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -108,6 +152,13 @@ public final class BlogServiceGrpc {
                 com.example.wwy_blog.grpc.blog.BlogRequest,
                 com.example.wwy_blog.grpc.blog.BlogResponse>(
                   this, METHODID_GET_BLOG_BY_ID)))
+          .addMethod(
+            getGetAllBlogsMethodHelper(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.example.wwy_blog.grpc.blog.BlogsRequest,
+                com.example.wwy_blog.grpc.blog.BlogsResponse>(
+                  this, METHODID_GET_ALL_BLOGS)))
           .build();
     }
   }
@@ -137,6 +188,14 @@ public final class BlogServiceGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetBlogByIdMethodHelper(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getAllBlogs(com.example.wwy_blog.grpc.blog.BlogsRequest request,
+        io.grpc.stub.StreamObserver<com.example.wwy_blog.grpc.blog.BlogsResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAllBlogsMethodHelper(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -162,6 +221,13 @@ public final class BlogServiceGrpc {
     public com.example.wwy_blog.grpc.blog.BlogResponse getBlogById(com.example.wwy_blog.grpc.blog.BlogRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetBlogByIdMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.example.wwy_blog.grpc.blog.BlogsResponse getAllBlogs(com.example.wwy_blog.grpc.blog.BlogsRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAllBlogsMethodHelper(), getCallOptions(), request);
     }
   }
 
@@ -190,9 +256,18 @@ public final class BlogServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetBlogByIdMethodHelper(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.example.wwy_blog.grpc.blog.BlogsResponse> getAllBlogs(
+        com.example.wwy_blog.grpc.blog.BlogsRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAllBlogsMethodHelper(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_BLOG_BY_ID = 0;
+  private static final int METHODID_GET_ALL_BLOGS = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -214,6 +289,10 @@ public final class BlogServiceGrpc {
         case METHODID_GET_BLOG_BY_ID:
           serviceImpl.getBlogById((com.example.wwy_blog.grpc.blog.BlogRequest) request,
               (io.grpc.stub.StreamObserver<com.example.wwy_blog.grpc.blog.BlogResponse>) responseObserver);
+          break;
+        case METHODID_GET_ALL_BLOGS:
+          serviceImpl.getAllBlogs((com.example.wwy_blog.grpc.blog.BlogsRequest) request,
+              (io.grpc.stub.StreamObserver<com.example.wwy_blog.grpc.blog.BlogsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -277,6 +356,7 @@ public final class BlogServiceGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new BlogServiceFileDescriptorSupplier())
               .addMethod(getGetBlogByIdMethodHelper())
+              .addMethod(getGetAllBlogsMethodHelper())
               .build();
         }
       }

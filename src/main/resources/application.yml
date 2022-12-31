@@ -44,7 +44,7 @@ mybatis:
 grpc:
   client:
     grpc-server:
-      address: static://124.222.212.180:9090
+      address: static://127.0.0.1:9090
       negotiationType: plaintext
       enableKeepAlive: true
       keepAliveWithoutCalls: true

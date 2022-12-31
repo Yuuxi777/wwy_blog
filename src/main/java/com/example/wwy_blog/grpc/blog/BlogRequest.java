@@ -4,11 +4,11 @@
 package com.example.wwy_blog.grpc.blog;
 
 /**
- * Protobuf type {@code BlogRequest}
+ * Protobuf type {@code proto.BlogRequest}
  */
 public  final class BlogRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:BlogRequest)
+    // @@protoc_insertion_point(message_implements:proto.BlogRequest)
     BlogRequestOrBuilder {
 private static final long serialVersionUID = 0L;
   // Use BlogRequest.newBuilder() to construct.
@@ -69,12 +69,12 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_BlogRequest_descriptor;
+    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_BlogRequest_fieldAccessorTable
+    return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.example.wwy_blog.grpc.blog.BlogRequest.class, com.example.wwy_blog.grpc.blog.BlogRequest.Builder.class);
   }
@@ -240,20 +240,20 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code BlogRequest}
+   * Protobuf type {@code proto.BlogRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:BlogRequest)
+      // @@protoc_insertion_point(builder_implements:proto.BlogRequest)
       com.example.wwy_blog.grpc.blog.BlogRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_BlogRequest_descriptor;
+      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_BlogRequest_fieldAccessorTable
+      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.example.wwy_blog.grpc.blog.BlogRequest.class, com.example.wwy_blog.grpc.blog.BlogRequest.Builder.class);
     }
@@ -282,7 +282,7 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_BlogRequest_descriptor;
+      return com.example.wwy_blog.grpc.blog.BlogProto.internal_static_proto_BlogRequest_descriptor;
     }
 
     public com.example.wwy_blog.grpc.blog.BlogRequest getDefaultInstanceForType() {
@@ -407,10 +407,10 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:BlogRequest)
+    // @@protoc_insertion_point(builder_scope:proto.BlogRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:BlogRequest)
+  // @@protoc_insertion_point(class_scope:proto.BlogRequest)
   private static final com.example.wwy_blog.grpc.blog.BlogRequest DEFAULT_INSTANCE;
   static {
     DEFAULT_INSTANCE = new com.example.wwy_blog.grpc.blog.BlogRequest();
